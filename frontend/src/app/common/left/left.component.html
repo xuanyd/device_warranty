@@ -1,0 +1,32 @@
+<div class="cl-toggle" (click)="openHideMenu()"><i class="fa fa-bars"></i></div>
+<div class="cl-navblock">
+  <div class="menu-space nano nscroller has-scrollbar" 
+    style="height: 467px;margin-top: 43px;">
+    <div class="content" tabindex="0" style="right: -17px;">
+      <div class="side-user">
+        <div class="avatar">
+          <img src="../../assets/img/avatar1_50.jpg" alt="Avatar">
+        </div>
+        <div class="info">
+          <a href="/html/index.html#">{{userName}}</a>
+          <img src="../../assets/img/state_online.png" alt="Status"> 
+          <span>在线</span>
+        </div>
+      </div>
+       <ul class="cl-vnavigation" 
+        [ngStyle]="{'display':hideDisplay ? 'block' : 'none' }"
+       >
+        <li *ngFor="let item of leftMenuJson" [ngClass]="{'parent':item.childs}" >
+          <a href="javascript:void(0);" (click)="openLeft(item.id,item.url)">
+            <i class="fa {{item.cls}}"></i><span>{{item.name}}</span>
+          </a>
+          <ul *ngIf="item.childs" class="sub-menu" [ngClass]="{'display-block':leftMenus[item.id]}">
+            <li *ngFor="let sItem of item.childs">
+              <a href="javascript:void(0);" (click)="openLeft(sItem.id,sItem.url)">{{sItem.name}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</div>
+

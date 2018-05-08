@@ -1,0 +1,69 @@
+<div class="page-head">
+    <ol class="breadcrumb">
+      <li><a href="/#/app/home">主页</a></li>
+      <li><a href="javascript:;">心电图管理</a></li>
+      <li><a href="/#/app/search/patient">心电信息</a></li>
+      <li class="active">诊断信息添加</li>
+    </ol>
+</div> 
+<div class="cl-mcont">
+<div class="row">
+  <div class="col-md-12">
+    <div class="block-flat">
+		<form [formGroup]="checkAddForm">
+			<div class="search" style="padding-top: 10px;">
+				<div class="form-group row" style="margin-left: 10px;">
+					<div class="col-sm-1">诊断模板选择</div>
+					<div class="col-sm-5">
+				    	<select class="form-control"
+				    		formControlName="templateId" 
+				    		[(ngModel)]="checkInfo.templateId"
+				    		(change)="changeTemplate()">
+		                    <option *ngFor="let t of templateList;" value="{{t.id}}">{{t.template_name}}</option>
+	                  	</select>
+				  	</div>
+			  	</div>
+				<div class="form-group row" style="margin-left: 10px;">
+					<div class="col-sm-1">诊断内容</div>
+					<div class="col-sm-5">
+						<textarea 
+							name="content" 
+							formControlName="content"
+							[(ngModel)]="checkInfo.content"
+							class="form-control"></textarea>
+				  	</div>
+				  	<div class="col-sm-5" style="color: red;" 
+				  		[hidden]="!(checkAddForm.controls['content'].errors && checkAddForm.controls['content'].dirty)">
+			      		诊断内容必填
+			    	</div>
+			  	</div>
+			  	<div class="form-group row" style="margin-left: 10px;">
+					<div class="col-sm-1">备注</div>
+					<div class="col-sm-5">
+				    	<textarea 
+							name="remark" 
+							formControlName="remark" 
+							[(ngModel)]="checkInfo.remark"
+							class="form-control"></textarea>
+				  	</div>
+				  	<div class="col-sm-5" style="color: red;" 
+				  		[hidden]="!(checkAddForm.controls['remark'].errors && checkAddForm.controls['remark'].dirty)">
+			      		备注必填
+			    	</div>
+			  	</div>
+			  	<div class="form-group row" style="margin-left: 10px;">
+				  	<div class="col-sm-2" >
+				  		<button class="btn btn-primary last-btn" (click)="add()">
+			        	保存
+			      		</button>
+				  		<button class="btn btn-secondary last-btn" (click)="back()">
+			       		返回
+			      		</button>  
+				  	</div>
+			  	</div>
+			</div>
+		</form>
+	</div>
+  </div>
+</div>
+</div>

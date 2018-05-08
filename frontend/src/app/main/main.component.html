@@ -1,0 +1,16 @@
+<c-header-menu></c-header-menu>
+<div id="cl-wrapper" class="fixed-menu" [ngClass]="{'sb-collapsed':leftMenuClosed}">
+  <div class="cl-sidebar" data-position="right">
+    <c-left-menu></c-left-menu>
+    <div class="text-right collapse-button" style="padding: 7px 9px;">
+      <input type="text" class="form-control search" placeholder="Search...">
+      <button class="btn btn-default" style="" (click)="changeMenuStatus()">
+        <i style="color:#fff;" 
+          class="fa fa-angle-left" 
+          [ngClass]="{'fa-angle-left':!leftMenuClosed,'fa-angle-right':leftMenuClosed}"></i>
+      </button>
+    </div>  
+</div> 
+<div class="container-fluid" id="pcont">
+  <router-outlet ></router-outlet>
+</div>

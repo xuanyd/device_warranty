@@ -1,0 +1,21 @@
+.form-control{  
+  float: left;  
+  width: 70%;  
+}  
+  
+.btn btn-default{  
+  background-color: #41ABE9;  
+}  
+
+td {
+	word-break: keep-all;
+	white-space:nowrap;
+}
+
+.select {
+	background-color: #CCCCFF;
+}
+
+tbody tr{
+	cursor: pointer;
+}

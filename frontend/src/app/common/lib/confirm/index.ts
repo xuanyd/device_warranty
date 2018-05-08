@@ -1,0 +1,1 @@
+export {ConfirmModule} from './confirm.module'; 
