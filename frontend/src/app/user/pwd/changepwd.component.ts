@@ -33,5 +33,9 @@ export class ChangePwdComponent implements OnInit {
 	}
   ngOnInit() {
   }
+
+  back() {
+    this.router.navigate(['/app/home']);
+  }
   
 }

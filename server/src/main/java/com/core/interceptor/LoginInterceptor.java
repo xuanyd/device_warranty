@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-
+import java.util.*;
 
 public class LoginInterceptor implements HandlerInterceptor{
 
@@ -35,7 +35,7 @@ public class LoginInterceptor implements HandlerInterceptor{
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                              Object handler) throws Exception {
 
-        tring url=request.getRequestURL().toString();
+        String url=request.getRequestURL().toString();
 
         //验证是否为管理员
         if(url.contains("admin")){
