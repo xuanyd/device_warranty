@@ -15,5 +15,5 @@ public class Constant {
 	//tocken有效时间
 	public static final long JWT_TTL = 1 * 5 * 1000;
 
-	
+	public static Map<String, Object> cacheMap = new HashMap<>();
 }

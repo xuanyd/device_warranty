@@ -42,9 +42,7 @@ public class LoginInterceptor implements HandlerInterceptor{
             if(url.contains("admin/login")){
                 return true;
             } else {
-                Map<String, String> adminUserInfo = (Map<String, String>) request.getSession(true).getAttribute("adminLoginInfo");
-                if(adminUserInfo == null || adminUserInfo.isEmpty()){
-                    request.getRequestDispatcher("/pages/admin/login.jsp").forward(request, response);
+                
                     return false;
                 } else {
                     return true;
